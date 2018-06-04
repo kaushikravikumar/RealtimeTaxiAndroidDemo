@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">RealtimeTaxiAndroidDemo</string>
+    <string name="title_activity_driver">DriverActivity</string>
+    <string name="title_activity_passenger">PassengerActivity</string>
+</resources>
