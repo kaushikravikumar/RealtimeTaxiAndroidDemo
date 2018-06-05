@@ -18,19 +18,21 @@ import com.pubnub.kaushik.realtimetaxiandroiddemo.util.Constants;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static PubNub pubnub;
+    public static PubNub pubnub; // Pubnub instance
 
-    Button driverButton, passengerButton;
+    Button driverButton, passengerButton; // Buttons that redirect user to proper view
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         driverButton = (Button) findViewById(R.id.driverButton);
         passengerButton = (Button) findViewById(R.id.passengerButton);
+
         initPubnub();
 
-        // Send user to Driver Activity or Passenger Activity
+        // Send user to Driver Activity or Passenger Activity using intents
         driverButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,12 +46,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         if (Build.VERSION.SDK_INT == Build.VERSION_CODES.M) {
             checkPermission();
         }
 
     }
 
+    /*
+        Creates PNConfiguration instance and enters Pubnub credentials to create Pubnub instance.
+        This Pubnub instance will be used whenever we need to create connection to Pubnub.
+     */
     private void initPubnub() {
         PNConfiguration pnConfiguration = new PNConfiguration();
         pnConfiguration.setSubscribeKey(Constants.PUBNUB_SUBSCRIBE_KEY);
@@ -58,6 +65,10 @@ public class MainActivity extends AppCompatActivity {
         pubnub = new PubNub(pnConfiguration);
     }
 
+    /*
+        Checks user's location permission to see whether user has granted access to fine location and coarse location.
+        If not it will request these permissions.
+     */
     public void checkPermission() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ||
                 ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED

@@ -30,11 +30,11 @@ import java.util.Map;
 
 public class PassengerActivity extends AppCompatActivity implements OnMapReadyCallback {
 
-    private SupportMapFragment mMapFragment;
+    private SupportMapFragment mMapFragment; // MapView UI element
 
-    private GoogleMap mGoogleMap;
+    private GoogleMap mGoogleMap; // object that represents googleMap and allows us to use Google Maps API features
 
-    private Marker driverMarker;
+    private Marker driverMarker; // Marker to display driver's location
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,8 +71,10 @@ public class PassengerActivity extends AppCompatActivity implements OnMapReadyCa
     }
 
     /*
-        This method is called when the map is completely set up. After the map is setup, the passenger will be subscribed to the
-        driver's location channel, so their location can be updated on the mapview.
+        This method is called when the map is completely set up. After the map is setup,
+        the passenger will be subscribed to the driver's location channel, so their location
+        can be updated on the MapView. We use the reference to the GoogleMap object googleMap
+        to utilize any Google Maps API features.
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -117,7 +119,9 @@ public class PassengerActivity extends AppCompatActivity implements OnMapReadyCa
     }
 
     /*
-        This method gets the new location of driver and sets the marker to that location. Also moves camera, if marker is outside of map bounds.
+        This method gets the new location of driver and calls method animateCar
+        to move the marker slowly along linear path to this location.
+        Also moves camera, if marker is outside of map bounds.
      */
     private void updateUI(Map<String, String> newLoc) {
         LatLng newLocation = new LatLng(Double.valueOf(newLoc.get("lat")), Double.valueOf(newLoc.get("lng")));
@@ -138,6 +142,10 @@ public class PassengerActivity extends AppCompatActivity implements OnMapReadyCa
         }
     }
 
+    /*
+        Animates car by moving it by fractions of the full path and finally moving it to its
+        destination in a duration of 5 seconds.
+     */
     private void animateCar(final LatLng destination) {
         final LatLng startPosition = driverMarker.getPosition();
         final LatLng endPosition = new LatLng(destination.latitude, destination.longitude);
@@ -166,6 +174,11 @@ public class PassengerActivity extends AppCompatActivity implements OnMapReadyCa
         valueAnimator.start();
     }
 
+    /*
+        This interface defines the interpolate method that allows us to get LatLng coordinates for
+        a location a fraction of the way between two points. It also utilizes a Linear method, so
+        that paths are linear, as they should be in most streets.
+     */
     private interface LatLngInterpolator {
         LatLng interpolate(float fraction, LatLng a, LatLng b);
 
