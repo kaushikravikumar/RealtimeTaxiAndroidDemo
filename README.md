@@ -5,6 +5,7 @@ https://youtu.be/u9W3ZNHzdN0
 
 Required Gradle Dependencies:
 
+``` 
 implementation group: 'com.pubnub', name: 'pubnub-gson', version: '4.12.0'
 
 implementation 'com.google.android.gms:play-services-maps:15.0.1'
@@ -16,4 +17,5 @@ implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', versio
 implementation group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.9.2'
 
 implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.2'
+```
 
