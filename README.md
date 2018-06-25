@@ -27,6 +27,13 @@ implementation group: 'com.fasterxml.jackson.core', name: 'jackson-annotations',
 implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.2'
 ```
 
+Required Manifest Permissions:
 
+```
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+```
 
 
