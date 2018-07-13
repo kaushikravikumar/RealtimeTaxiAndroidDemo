@@ -29,11 +29,16 @@ implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', ve
 
 Required Manifest Permissions:
 
-```
+``` xml
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 ```
 
+**Sign up for PubNub click here:**
+
+<a href="https://dashboard.pubnub.com/signup?devrel_gh=YOUR-REPO-NAME">
+    <img alt="PubNub Signup" src="https://i.imgur.com/og5DDjf.png" width=260 height=97/>
+</a>
 
