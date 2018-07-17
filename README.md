@@ -4,9 +4,11 @@ This demo showcases PubNub's Publish Subscribe feature. Through this setup, deve
 
 [Click here for full tutorial](https://www.pubnub.com/blog/build-your-own-uber-lyft-app-geolocation-tracking-android/)
 
+<p align="center">
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=Yvud7KK5QKY
-" target="_blank"><img align="center" src="http://img.youtube.com/vi/Yvud7KK5QKY/0.jpg" 
+" target="_blank"><img src="http://img.youtube.com/vi/Yvud7KK5QKY/0.jpg" 
 alt="Demo Video" width="240" height="180" border="10" /></a>
+</p>
 
 # Quickstart
 
