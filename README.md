@@ -4,7 +4,7 @@ This demo showcases PubNub's Publish Subscribe feature. Through this setup, deve
 
 [Click here for full tutorial](https://www.pubnub.com/blog/build-your-own-uber-lyft-app-geolocation-tracking-android/)
 
-Quickstart:
+# Quickstart
 
 1. In order to set up PubNub in your android app, you will need to create a PubNub app in the PubNub Admin Dashboard (it’s free). Upon creating the app, you will be assigned a subscribe key and publish key. You will need to go to the Constants.java class and enter these credentials where it says INSERT_SUBSCRIBE_KEY and INSERT_PUBLISH_KEY respectively.
 
@@ -12,7 +12,7 @@ Quickstart:
 
 3. Ensure that you have downloaded Google Play Services in your Android SDK Manager, accessible from the tool bar at the top of Android Studio. 
 
-Required Gradle Dependencies:
+# Required Gradle Dependencies
 
 ``` 
 implementation group: 'com.pubnub', name: 'pubnub-gson', version: '4.12.0'
@@ -28,7 +28,7 @@ implementation group: 'com.fasterxml.jackson.core', name: 'jackson-annotations',
 implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.2'
 ```
 
-Required Manifest Permissions:
+# Required Manifest Permissions
 
 ``` xml
     <uses-permission android:name="android.permission.INTERNET" />
