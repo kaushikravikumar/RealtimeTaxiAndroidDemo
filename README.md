@@ -4,6 +4,10 @@ This demo showcases PubNub's Publish Subscribe feature. Through this setup, deve
 
 [Click here for full tutorial](https://www.pubnub.com/blog/build-your-own-uber-lyft-app-geolocation-tracking-android/)
 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=Yvud7KK5QKY
+" target="_blank"><img src="http://img.youtube.com/vi/Yvud7KK5QKY/0.jpg" 
+alt="Demo Video" width="240" height="180" border="10" /></a>
+
 # Quickstart
 
 1. In order to set up PubNub in your android app, you will need to create a PubNub app in the PubNub Admin Dashboard (it’s free). Upon creating the app, you will be assigned a subscribe key and publish key. You will need to go to the Constants.java class and enter these credentials where it says INSERT_SUBSCRIBE_KEY and INSERT_PUBLISH_KEY respectively.
